@@ -2442,3 +2442,41 @@ html[data-contrast="true"] .involvement-card {
     display: block;
   }
 }
+
+/* Official owner-supplied logo; its full artwork and lettering are retained. */
+.brand .official-logo {
+  width: 108px;
+  height: 108px;
+  object-fit: contain;
+  border-radius: 3px;
+  background: #fff;
+}
+.header-inner {
+  min-height: 126px;
+}
+.brand-light .official-logo {
+  width: 116px;
+  height: 116px;
+}
+@media (max-width: 1050px) {
+  .header-inner {
+    min-height: 112px;
+  }
+  .brand .official-logo {
+    width: 96px;
+    height: 96px;
+  }
+}
+@media (max-width: 760px) {
+  .header-inner {
+    min-height: 100px;
+  }
+  .brand .official-logo {
+    width: 84px;
+    height: 84px;
+  }
+  .brand-light .official-logo {
+    width: 108px;
+    height: 108px;
+  }
+}

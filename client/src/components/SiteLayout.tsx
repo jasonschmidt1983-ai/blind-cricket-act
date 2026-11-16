@@ -24,27 +24,13 @@ export function Logo({ light = false }: { light?: boolean }) {
       href="/"
       aria-label="Blind Cricket ACT home"
     >
-      <svg className="brand-mark" viewBox="0 0 60 60" aria-hidden="true">
-        <circle cx="28" cy="30" r="24" fill="currentColor" />
-        <path
-          d="M17 12c19 11 23 28 15 43M25 7c-13 15-13 32 2 48"
-          fill="none"
-          stroke="#FFC72C"
-          strokeWidth="2.6"
-          strokeDasharray="3 3"
-        />
-        <path
-          d="M49 17c5 7 5 19 0 26M54 12c8 10 8 26 0 36"
-          fill="none"
-          stroke="currentColor"
-          strokeWidth="2.4"
-          strokeLinecap="round"
-        />
-      </svg>
-      <span className="brand-type">
-        BLIND CRICKET
-        <span className="brand-region">AUSTRALIAN CAPITAL TERRITORY</span>
-      </span>
+      <img
+        className="official-logo"
+        src="/images/blind-cricket-act-logo.webp"
+        alt="Blind Cricket ACT"
+        width="448"
+        height="448"
+      />
     </a>
   );
 }
