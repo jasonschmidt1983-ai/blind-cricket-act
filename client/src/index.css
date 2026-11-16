@@ -1,4 +1,5 @@
 @import "tailwindcss";
+@import "./accessibility.css";
 
 @font-face {
   font-family: Barlow;
@@ -40,7 +41,7 @@ html {
 }
 body {
   margin: 0;
-  font-size: 17px;
+  font-size: 1.0625rem;
   line-height: 1.65;
 }
 button,
@@ -72,10 +73,10 @@ h3 {
   color: var(--navy);
 }
 h2 {
-  font-size: clamp(36px, 3.45vw, 50px);
+  font-size: clamp(2.25rem, calc(3.45vw * var(--text-scale, 1)), 3.125rem);
 }
 h3 {
-  font-size: 28px;
+  font-size: 1.75rem;
 }
 img {
   display: block;
@@ -112,7 +113,7 @@ main:focus {
   padding: 88px 0;
 }
 .eyebrow {
-  font-size: 12px;
+  font-size: 0.75rem;
   letter-spacing: 0.15em;
   font-weight: 700;
   line-height: 1.4;
@@ -153,7 +154,7 @@ main:focus {
   color: var(--navy);
   border: 1px solid var(--yellow);
   padding: 14px 24px;
-  font-size: 15px;
+  font-size: 0.9375rem;
   font-weight: 700;
   border-radius: 3px;
   line-height: 1.4;
@@ -179,7 +180,7 @@ main:focus {
   align-items: center;
   gap: 17px;
   min-height: 44px;
-  font-size: 15px;
+  font-size: 0.9375rem;
   font-weight: 700;
   border-bottom: 1px solid var(--navy);
   padding-bottom: 5px;
@@ -191,7 +192,7 @@ main:focus {
 .utility-bar {
   background: var(--navy);
   color: #fff;
-  font-size: 11px;
+  font-size: 0.6875rem;
   letter-spacing: 0.12em;
   line-height: 1.4;
 }
@@ -223,7 +224,7 @@ main:focus {
   background: none;
   border: 0;
   color: white;
-  font-size: 11px;
+  font-size: 0.6875rem;
   letter-spacing: 0.04em;
   min-height: 35px;
   padding: 0 4px;
@@ -260,7 +261,7 @@ main:focus {
 }
 .brand-type {
   font-family: "Barlow Condensed", Arial, sans-serif;
-  font-size: 24px;
+  font-size: 1.5rem;
   line-height: 1;
   font-weight: 700;
   letter-spacing: 0.02em;
@@ -271,7 +272,7 @@ main:focus {
   display: block;
   font-family: Barlow, Arial, sans-serif;
   letter-spacing: 0.065em;
-  font-size: 7.8px;
+  font-size: 0.4875rem;
   margin-top: 8px;
   font-weight: 700;
 }
@@ -283,7 +284,7 @@ main:focus {
   justify-content: flex-end;
 }
 .desktop-nav a {
-  font-size: 12px;
+  font-size: 0.75rem;
   font-weight: 600;
   white-space: nowrap;
   position: relative;
@@ -394,7 +395,7 @@ main:focus {
 }
 .hero .eyebrow {
   color: #fff;
-  font-size: 10px;
+  font-size: 0.625rem;
   letter-spacing: 0.15em;
   display: flex;
   gap: 10px;
@@ -409,7 +410,7 @@ main:focus {
   flex-shrink: 0;
 }
 .hero h1 {
-  font-size: clamp(62px, 6.5vw, 88px);
+  font-size: clamp(3.875rem, calc(6.5vw * var(--text-scale, 1)), 5.5rem);
   color: white;
   letter-spacing: -0.02em;
   line-height: 0.98;
@@ -418,14 +419,14 @@ main:focus {
   color: var(--yellow);
 }
 .hero-subtitle {
-  font-size: 18px;
+  font-size: 1.125rem;
   line-height: 1.65;
   max-width: 460px;
   margin-top: 26px;
   margin-bottom: 13px;
 }
 .hero-support {
-  font-size: 14px;
+  font-size: 0.875rem;
   line-height: 1.8;
   color: #d6e2ee;
   max-width: 410px;
@@ -441,7 +442,7 @@ main:focus {
   gap: 28px;
 }
 .hero-secondary {
-  font-size: 14px;
+  font-size: 0.875rem;
   font-weight: 600;
   display: inline-flex;
   align-items: center;
@@ -463,7 +464,7 @@ main:focus {
   align-items: center;
   gap: 10px;
   color: #fff;
-  font-size: 10px;
+  font-size: 0.625rem;
   letter-spacing: 0.13em;
   font-weight: 600;
 }
@@ -483,7 +484,7 @@ main:focus {
   justify-content: space-between;
   align-items: center;
   gap: 20px;
-  font-size: 14px;
+  font-size: 0.875rem;
 }
 .welcome-inner > span:first-child {
   display: flex;
@@ -491,7 +492,7 @@ main:focus {
   gap: 15px;
 }
 .welcome-detail {
-  font-size: 12px;
+  font-size: 0.75rem;
   letter-spacing: 0.02em;
 }
 .section-heading {
@@ -502,7 +503,7 @@ main:focus {
   margin-bottom: 37px;
 }
 .section-heading > p {
-  font-size: 15px;
+  font-size: 0.9375rem;
   line-height: 1.8;
   color: var(--muted);
   margin: 0 0 4px;
@@ -512,7 +513,7 @@ main:focus {
   margin-bottom: 3px;
 }
 .involved-section .eyebrow {
-  font-size: 11px;
+  font-size: 0.6875rem;
 }
 .involvement-grid {
   display: grid;
@@ -552,7 +553,7 @@ main:focus {
   left: 15px;
   font-family: "Barlow Condensed";
   color: white;
-  font-size: 16px;
+  font-size: 1rem;
   letter-spacing: 0.05em;
   background: #002855cc;
   padding: 1px 8px;
@@ -565,7 +566,7 @@ main:focus {
   padding: 23px 20px 22px;
 }
 .involvement-content h3 {
-  font-size: 29px;
+  font-size: 1.8125rem;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -582,7 +583,7 @@ main:focus {
   background: var(--yellow);
 }
 .involvement-content p {
-  font-size: 14px;
+  font-size: 0.875rem;
   color: var(--muted);
   line-height: 1.65;
   margin: 0;
@@ -620,17 +621,17 @@ main:focus {
   gap: 17px;
   color: var(--navy);
   line-height: 1.5;
-  font-size: 14px;
+  font-size: 0.875rem;
   box-shadow: 0 8px 25px #0028550d;
 }
 .image-note strong {
-  font-size: 18px;
+  font-size: 1.125rem;
 }
 .explain-copy h2 {
   margin-bottom: 25px;
 }
 .explain-copy > p:not(.eyebrow) {
-  font-size: 16px;
+  font-size: 1rem;
   color: var(--muted);
   line-height: 1.85;
 }
@@ -639,7 +640,7 @@ main:focus {
   gap: 25px;
   flex-wrap: wrap;
   margin: 24px 0;
-  font-size: 13px;
+  font-size: 0.8125rem;
   font-weight: 600;
   color: var(--navy);
 }
@@ -698,7 +699,7 @@ main:focus {
 }
 .badge {
   display: inline-block;
-  font-size: 9px;
+  font-size: 0.5625rem;
   letter-spacing: 0.13em;
   font-weight: 700;
   line-height: 1.4;
@@ -708,20 +709,20 @@ main:focus {
   margin-bottom: 8px;
 }
 .activity-item h3 {
-  font-size: 28px;
+  font-size: 1.75rem;
   margin-bottom: 8px;
 }
 .activity-item p {
   display: flex;
   gap: 5px;
   align-items: center;
-  font-size: 13px;
+  font-size: 0.8125rem;
   color: var(--muted);
   margin-bottom: 3px;
   line-height: 1.5;
 }
 .activity-status {
-  font-size: 11px;
+  font-size: 0.6875rem;
   color: #596673;
   line-height: 1.4;
 }
@@ -764,7 +765,7 @@ main:focus {
 }
 .story-category {
   color: var(--navy);
-  font-size: 10px;
+  font-size: 0.625rem;
   letter-spacing: 0.11em;
   font-weight: 700;
   text-transform: uppercase;
@@ -782,12 +783,12 @@ main:focus {
   vertical-align: middle;
 }
 .story-content h3 {
-  font-size: 31px;
+  font-size: 1.9375rem;
   line-height: 1.1;
   margin-bottom: 13px;
 }
 .story-content p {
-  font-size: 14px;
+  font-size: 0.875rem;
   line-height: 1.8;
   color: var(--muted);
   margin-bottom: 25px;
@@ -799,7 +800,7 @@ main:focus {
   border-top: 1px solid var(--border);
   padding-top: 15px;
   margin-top: auto;
-  font-size: 11px;
+  font-size: 0.6875rem;
   color: var(--muted);
 }
 .story-foot svg {
@@ -825,18 +826,18 @@ main:focus {
 }
 .community-copy .eyebrow {
   color: var(--yellow);
-  font-size: 11px;
+  font-size: 0.6875rem;
 }
 .community-copy h2 {
   color: white;
-  font-size: 50px;
+  font-size: 3.125rem;
   margin-bottom: 24px;
 }
 .community-copy h2 em {
   color: var(--yellow);
 }
 .community-copy p:not(.eyebrow) {
-  font-size: 15px;
+  font-size: 0.9375rem;
   color: #d7e2ec;
   line-height: 1.85;
   max-width: 440px;
@@ -855,11 +856,11 @@ main:focus {
   text-align: center;
 }
 .partners-heading h2 {
-  font-size: 42px;
+  font-size: 2.625rem;
   margin-bottom: 17px;
 }
 .partners-heading p:not(.eyebrow) {
-  font-size: 14px;
+  font-size: 0.875rem;
   color: var(--muted);
   line-height: 1.8;
 }
@@ -884,11 +885,11 @@ main:focus {
   opacity: 0.72;
 }
 .partner-wordmark span {
-  font-size: 24px;
+  font-size: 1.5rem;
 }
 .partner-wordmark small {
   display: block;
-  font-size: 11px;
+  font-size: 0.6875rem;
   letter-spacing: 0.13em;
   margin-top: 7px;
 }
@@ -896,7 +897,7 @@ main:focus {
   font-family: Georgia, serif;
 }
 .pace-mark span {
-  font-size: 33px;
+  font-size: 2.0625rem;
 }
 .pace-mark small {
   font-family: Barlow, sans-serif;
@@ -905,13 +906,13 @@ main:focus {
 }
 .pace-sun {
   color: var(--navy);
-  font-size: 40px !important;
+  font-size: 2.5rem !important;
 }
 .cricket-mark {
   font-family: "Barlow Condensed";
 }
 .cricket-mark small {
-  font-size: 24px;
+  font-size: 1.5rem;
   margin-top: 2px;
 }
 .partner-shield {
@@ -922,22 +923,22 @@ main:focus {
   justify-content: center;
   border: 2px solid var(--navy);
   border-radius: 2px 2px 19px 19px;
-  font-size: 33px !important;
+  font-size: 2.0625rem !important;
 }
 .blind-cricket-mark span {
-  font-size: 18px;
+  font-size: 1.125rem;
   font-family: "Barlow Condensed";
 }
 .blind-cricket-mark small {
   font-family: Barlow;
-  font-size: 10px;
+  font-size: 0.625rem;
 }
 .sports-mark span {
-  font-size: 21px;
+  font-size: 1.3125rem;
   letter-spacing: -0.02em;
 }
 .sports-mark small {
-  font-size: 17px;
+  font-size: 1.0625rem;
   letter-spacing: 0.01em;
   margin-top: 3px;
 }
@@ -969,12 +970,12 @@ main:focus {
   gap: 24px;
 }
 .partner-bottom p {
-  font-size: 14px;
+  font-size: 0.875rem;
   color: var(--muted);
   margin: 0;
 }
 .partner-bottom .button {
-  font-size: 13px;
+  font-size: 0.8125rem;
   min-height: 47px;
 }
 
@@ -993,10 +994,10 @@ main:focus {
 }
 .footer-top .eyebrow {
   color: var(--yellow);
-  font-size: 10px;
+  font-size: 0.625rem;
 }
 .footer-top h2 {
-  font-size: 43px;
+  font-size: 2.6875rem;
   color: white;
 }
 .footer-links-row {
@@ -1010,7 +1011,7 @@ main:focus {
   display: flex;
   flex-wrap: wrap;
   gap: 28px;
-  font-size: 13px;
+  font-size: 0.8125rem;
 }
 .footer-links a {
   display: inline-flex;
@@ -1028,7 +1029,7 @@ main:focus {
   color: #ccdce9;
 }
 .country-acknowledgment {
-  font-size: 11px;
+  font-size: 0.6875rem;
   line-height: 1.9;
   color: #c5d4e1;
   max-width: 860px;
@@ -1040,7 +1041,7 @@ main:focus {
   justify-content: space-between;
   border-top: 1px solid #ffffff25;
   padding-top: 22px;
-  font-size: 10px;
+  font-size: 0.625rem;
   color: #c5d4e1;
   gap: 20px;
 }
@@ -1082,7 +1083,7 @@ main:focus {
   align-items: center;
   gap: 10px;
   flex-wrap: wrap;
-  font-size: 11px;
+  font-size: 0.6875rem;
   color: var(--muted);
   margin-bottom: 30px;
   line-height: 1.6;
@@ -1092,11 +1093,11 @@ main:focus {
   text-decoration: underline;
 }
 .page-hero h1 {
-  font-size: clamp(48px, 5vw, 70px);
+  font-size: clamp(3rem, calc(5vw * var(--text-scale, 1)), 4.375rem);
   margin-bottom: 24px;
 }
 .page-hero-content > p:not(.eyebrow) {
-  font-size: 18px;
+  font-size: 1.125rem;
   line-height: 1.75;
   color: var(--muted);
   max-width: 540px;
@@ -1126,7 +1127,7 @@ main:focus {
 .subnav a {
   background: var(--cream);
   border: 1px solid var(--border);
-  font-size: 13px;
+  font-size: 0.8125rem;
   padding: 10px 15px;
   display: flex;
   align-items: center;
@@ -1145,17 +1146,17 @@ main:focus {
   align-items: start;
 }
 .prose h2 {
-  font-size: 36px;
+  font-size: 2.25rem;
   margin-bottom: 20px;
 }
 .prose h3 {
-  font-size: 27px;
+  font-size: 1.6875rem;
   margin-bottom: 13px;
 }
 .prose p {
   color: var(--muted);
   line-height: 1.9;
-  font-size: 17px;
+  font-size: 1.0625rem;
 }
 .prose section,
 .content-section {
@@ -1188,17 +1189,17 @@ main:focus {
 }
 .aside-card h2,
 .aside-card h3 {
-  font-size: 28px;
+  font-size: 1.75rem;
   margin-bottom: 15px;
 }
 .aside-card p {
   color: var(--muted);
-  font-size: 15px;
+  font-size: 0.9375rem;
   line-height: 1.8;
 }
 .aside-card .button {
   text-decoration: none;
-  font-size: 13px;
+  font-size: 0.8125rem;
   gap: 12px;
   width: 100%;
   margin-top: 10px;
@@ -1214,11 +1215,11 @@ main:focus {
   border-radius: 4px;
 }
 .page-cta h2 {
-  font-size: 34px;
+  font-size: 2.125rem;
   margin-bottom: 8px;
 }
 .page-cta p {
-  font-size: 15px;
+  font-size: 0.9375rem;
   margin: 0;
   color: var(--navy);
 }
@@ -1243,7 +1244,7 @@ main:focus {
   cursor: pointer;
   min-height: 44px;
   padding: 8px 38px 8px 0;
-  font-size: 19px;
+  font-size: 1.1875rem;
   color: var(--navy);
 }
 .faq-list details p {
@@ -1277,11 +1278,11 @@ main:focus {
 .pathway-list li strong {
   display: block;
   font-family: "Barlow Condensed";
-  font-size: 25px;
+  font-size: 1.5625rem;
 }
 .pathway li span,
 .pathway-list li span {
-  font-size: 12px;
+  font-size: 0.75rem;
 }
 .filters,
 .filter-bar,
@@ -1300,7 +1301,7 @@ main:focus {
   background: var(--cream);
   padding: 10px 20px;
   min-height: 44px;
-  font-size: 14px;
+  font-size: 0.875rem;
   font-weight: 600;
   border-radius: 3px;
 }
@@ -1315,7 +1316,7 @@ main:focus {
 }
 .filter-status,
 .results-status {
-  font-size: 13px;
+  font-size: 0.8125rem;
   color: var(--muted);
   margin-bottom: 20px;
 }
@@ -1331,7 +1332,7 @@ main:focus {
   margin-bottom: 20px;
 }
 .empty-state h2 {
-  font-size: 36px;
+  font-size: 2.25rem;
   margin-bottom: 15px;
 }
 .empty-state p {
@@ -1355,19 +1356,19 @@ main:focus {
 }
 .contact-card h2,
 .program-card h2 {
-  font-size: 31px;
+  font-size: 1.9375rem;
   margin-bottom: 14px;
 }
 .contact-card p,
 .program-card p {
-  font-size: 15px;
+  font-size: 0.9375rem;
   color: var(--muted);
 }
 .not-found {
   min-height: 450px;
 }
 .not-found h1 {
-  font-size: 65px;
+  font-size: 4.0625rem;
   margin-bottom: 20px;
 }
 .not-found .button {
@@ -1383,7 +1384,7 @@ main:focus {
 }
 .notice h2,
 .safety-notice h2 {
-  font-size: 28px;
+  font-size: 1.75rem;
   margin-bottom: 12px;
 }
 
@@ -1408,12 +1409,12 @@ main:focus {
   padding: 40px;
 }
 .dialog-content h2 {
-  font-size: 39px;
+  font-size: 2.4375rem;
   margin-bottom: 14px;
   padding-right: 30px;
 }
 .dialog-content > p {
-  font-size: 15px;
+  font-size: 0.9375rem;
   color: var(--muted);
   line-height: 1.7;
 }
@@ -1431,7 +1432,7 @@ main:focus {
 }
 .search-label {
   display: block;
-  font-size: 13px;
+  font-size: 0.8125rem;
   font-weight: 600;
   margin: 22px 0 9px;
 }
@@ -1449,7 +1450,7 @@ main:focus {
   min-height: 52px;
   flex: 1;
   min-width: 0;
-  font-size: 16px;
+  font-size: 1rem;
   color: var(--ink);
 }
 .search-input-wrap input:focus {
@@ -1460,7 +1461,7 @@ main:focus {
   outline-offset: 3px;
 }
 .search-count {
-  font-size: 12px !important;
+  font-size: 0.75rem !important;
   margin: 20px 0 8px;
 }
 .search-results a {
@@ -1479,7 +1480,7 @@ main:focus {
 .search-results small {
   display: block;
   font-weight: 400;
-  font-size: 12px;
+  font-size: 0.75rem;
   color: var(--muted);
   line-height: 1.6;
   margin-top: 4px;
@@ -1502,7 +1503,7 @@ main:focus {
 }
 .preference-button small {
   display: block;
-  font-size: 13px;
+  font-size: 0.8125rem;
   font-weight: 400;
   color: var(--muted);
   margin-top: 5px;
@@ -1511,46 +1512,18 @@ main:focus {
   margin-top: 9px;
 }
 
-html[data-large-text="true"] {
-  font-size: 112.5%;
-}
-html[data-large-text="true"] body {
-  font-size: 19px;
-}
-html[data-large-text="true"] p {
-  font-size: max(1rem, 15px);
-}
-html[data-large-text="true"] .desktop-nav a {
-  font-size: 14px;
-}
-html[data-contrast="true"] {
-  --muted: #182d43;
-  --border: #526476;
-  --cream: #f0f2f4;
-}
-html[data-contrast="true"] .hero-support,
-html[data-contrast="true"] .community-copy p,
-html[data-contrast="true"] .footer-bottom,
-html[data-contrast="true"] .country-acknowledgment {
-  color: #fff;
-}
-html[data-contrast="true"] .story-card,
-html[data-contrast="true"] .involvement-card {
-  border: 1px solid var(--navy);
-}
-
 @media (min-width: 1450px) {
   .desktop-nav {
     gap: 26px;
   }
   .desktop-nav a {
-    font-size: 13px;
+    font-size: 0.8125rem;
   }
   .header-inner {
     gap: 37px;
   }
   .hero h1 {
-    font-size: 94px;
+    font-size: 5.875rem;
   }
   .hero-inner {
     min-height: 676px;
@@ -1570,23 +1543,23 @@ html[data-contrast="true"] .involvement-card {
     gap: 14px;
   }
   .desktop-nav a {
-    font-size: 11px;
+    font-size: 0.6875rem;
   }
   .brand-type {
-    font-size: 21px;
+    font-size: 1.3125rem;
   }
   .brand-mark {
     width: 44px;
   }
   .brand-region {
-    font-size: 7px;
+    font-size: 0.4375rem;
   }
   .hero-inner {
     padding-top: 60px;
     padding-bottom: 60px;
   }
   .hero h1 {
-    font-size: 77px;
+    font-size: 4.8125rem;
   }
   .hero-actions {
     gap: 21px;
@@ -1604,13 +1577,13 @@ html[data-contrast="true"] .involvement-card {
     padding: 20px 17px;
   }
   .involvement-content h3 {
-    font-size: 27px;
+    font-size: 1.6875rem;
   }
   .community-copy {
     padding: 52px 40px;
   }
   .community-copy h2 {
-    font-size: 43px;
+    font-size: 2.6875rem;
   }
   .story-image {
     height: 205px;
@@ -1619,7 +1592,7 @@ html[data-contrast="true"] .involvement-card {
     gap: 18px;
   }
   .partner-wordmark span {
-    font-size: 21px;
+    font-size: 1.3125rem;
   }
 }
 @media (max-width: 1050px) {
@@ -1633,22 +1606,22 @@ html[data-contrast="true"] .involvement-card {
     display: inline-flex;
   }
   .brand-type {
-    font-size: 25px;
+    font-size: 1.5625rem;
   }
   .brand-region {
-    font-size: 8px;
+    font-size: 0.5rem;
   }
   .brand-mark {
     width: 50px;
   }
   .hero h1 {
-    font-size: 71px;
+    font-size: 4.4375rem;
   }
   .hero-copy {
     width: 60%;
   }
   .hero-subtitle {
-    font-size: 17px;
+    font-size: 1.0625rem;
   }
   .hero-photo {
     left: 40%;
@@ -1668,17 +1641,17 @@ html[data-contrast="true"] .involvement-card {
     gap: 17px;
   }
   .hero-secondary {
-    font-size: 13px;
+    font-size: 0.8125rem;
   }
   .hero-actions .button {
     padding: 14px 18px;
     gap: 15px;
   }
   .welcome-detail {
-    font-size: 11px;
+    font-size: 0.6875rem;
   }
   .involvement-content p {
-    font-size: 13px;
+    font-size: 0.8125rem;
   }
   .section {
     padding: 67px 0;
@@ -1700,7 +1673,7 @@ html[data-contrast="true"] .involvement-card {
     gap: 15px;
   }
   .activity-item h3 {
-    font-size: 25px;
+    font-size: 1.5625rem;
   }
   .activity-icon {
     width: 48px;
@@ -1712,13 +1685,13 @@ html[data-contrast="true"] .involvement-card {
     padding: 21px;
   }
   .story-content h3 {
-    font-size: 28px;
+    font-size: 1.75rem;
   }
   .community-copy {
     padding: 48px 30px;
   }
   .community-copy h2 {
-    font-size: 40px;
+    font-size: 2.5rem;
   }
   .partner-grid {
     gap: 10px;
@@ -1753,7 +1726,7 @@ html[data-contrast="true"] .involvement-card {
     padding: 0 24px;
   }
   .utility-inner {
-    font-size: 9px;
+    font-size: 0.5625rem;
   }
   .utility-location {
     display: none;
@@ -1762,20 +1735,20 @@ html[data-contrast="true"] .involvement-card {
     gap: 8px;
   }
   .utility-inner button {
-    font-size: 10px;
+    font-size: 0.625rem;
   }
   .header-inner {
     min-height: 79px;
   }
   .brand-type {
-    font-size: 23px;
+    font-size: 1.4375rem;
   }
   .brand-mark {
     width: 44px;
     height: 49px;
   }
   .brand-region {
-    font-size: 7.3px;
+    font-size: 0.45625rem;
   }
   .header-tools {
     gap: 0;
@@ -1808,19 +1781,19 @@ html[data-contrast="true"] .involvement-card {
       linear-gradient(0deg, #002855, transparent 50%);
   }
   .hero .eyebrow {
-    font-size: 9px;
+    font-size: 0.5625rem;
     letter-spacing: 0.12em;
   }
   .hero h1 {
-    font-size: 76px;
+    font-size: 4.75rem;
     max-width: 510px;
   }
   .hero-subtitle {
-    font-size: 17px;
+    font-size: 1.0625rem;
     max-width: 430px;
   }
   .hero-support {
-    font-size: 14px;
+    font-size: 0.875rem;
     max-width: 370px;
   }
   .hero-actions {
@@ -1840,11 +1813,11 @@ html[data-contrast="true"] .involvement-card {
   }
   .welcome-inner > span:first-child {
     gap: 10px;
-    font-size: 13px;
+    font-size: 0.8125rem;
   }
   .welcome-detail {
     padding-left: 32px;
-    font-size: 11px;
+    font-size: 0.6875rem;
   }
   .section {
     padding: 56px 0;
@@ -1856,13 +1829,13 @@ html[data-contrast="true"] .involvement-card {
     margin-bottom: 29px;
   }
   .section-heading h2 {
-    font-size: 40px;
+    font-size: 2.5rem;
   }
   .section-heading > p {
-    font-size: 14px;
+    font-size: 0.875rem;
   }
   .section-heading .text-link {
-    font-size: 14px;
+    font-size: 0.875rem;
   }
   .section-heading br {
     display: none;
@@ -1875,10 +1848,10 @@ html[data-contrast="true"] .involvement-card {
     height: 209px;
   }
   .involvement-content h3 {
-    font-size: 30px;
+    font-size: 1.875rem;
   }
   .involvement-content p {
-    font-size: 14px;
+    font-size: 0.875rem;
   }
   .explain-grid {
     grid-template-columns: 1fr;
@@ -1893,10 +1866,10 @@ html[data-contrast="true"] .involvement-card {
     bottom: 19px;
   }
   .explain-copy h2 {
-    font-size: 44px;
+    font-size: 2.75rem;
   }
   .explain-copy > p:not(.eyebrow) {
-    font-size: 16px;
+    font-size: 1rem;
   }
   .feature-row {
     gap: 23px;
@@ -1914,7 +1887,7 @@ html[data-contrast="true"] .involvement-card {
     min-height: 149px;
   }
   .activity-item h3 {
-    font-size: 29px;
+    font-size: 1.8125rem;
   }
   .activity-icon {
     width: 58px;
@@ -1935,7 +1908,7 @@ html[data-contrast="true"] .involvement-card {
     min-height: 265px;
   }
   .story-content h3 {
-    font-size: 31px;
+    font-size: 1.9375rem;
   }
   .story-content {
     padding: 24px;
@@ -1951,11 +1924,11 @@ html[data-contrast="true"] .involvement-card {
     max-width: 100%;
   }
   .community-copy h2 {
-    font-size: 45px;
+    font-size: 2.8125rem;
   }
   .community-copy p:not(.eyebrow) {
     max-width: 550px;
-    font-size: 16px;
+    font-size: 1rem;
   }
   .partner-grid {
     grid-template-columns: repeat(2, 1fr);
@@ -1963,7 +1936,7 @@ html[data-contrast="true"] .involvement-card {
     padding: 27px 0;
   }
   .partners-heading h2 {
-    font-size: 37px;
+    font-size: 2.3125rem;
   }
   .partners-heading br {
     display: none;
@@ -1980,7 +1953,7 @@ html[data-contrast="true"] .involvement-card {
     padding-bottom: 33px;
   }
   .footer-top h2 {
-    font-size: 41px;
+    font-size: 2.5625rem;
   }
   .footer-links-row {
     flex-direction: column;
@@ -2010,10 +1983,10 @@ html[data-contrast="true"] .involvement-card {
     padding: 34px 0 37px;
   }
   .page-hero h1 {
-    font-size: 58px;
+    font-size: 3.625rem;
   }
   .page-hero-content > p:not(.eyebrow) {
-    font-size: 17px;
+    font-size: 1.0625rem;
   }
   .page-hero-image {
     height: 310px;
@@ -2034,7 +2007,7 @@ html[data-contrast="true"] .involvement-card {
     position: static;
   }
   .prose h2 {
-    font-size: 34px;
+    font-size: 2.125rem;
   }
   .page-cta {
     flex-direction: column;
@@ -2047,7 +2020,7 @@ html[data-contrast="true"] .involvement-card {
     gap: 8px;
   }
   .subnav a {
-    font-size: 12px;
+    font-size: 0.75rem;
     padding: 9px 12px;
   }
   .pathway,
@@ -2068,16 +2041,16 @@ html[data-contrast="true"] .involvement-card {
     padding: 29px;
   }
   .not-found h1 {
-    font-size: 53px;
+    font-size: 3.3125rem;
   }
   .dialog-content {
     padding: 31px 25px;
   }
   .dialog-content h2 {
-    font-size: 35px;
+    font-size: 2.1875rem;
   }
   .search-input-wrap input {
-    font-size: 14px;
+    font-size: 0.875rem;
   }
 }
 @media (max-width: 420px) {
@@ -2085,25 +2058,25 @@ html[data-contrast="true"] .involvement-card {
     padding: 0 20px;
   }
   .brand-type {
-    font-size: 21px;
+    font-size: 1.3125rem;
   }
   .brand-mark {
     width: 41px;
   }
   .brand-region {
-    font-size: 6.7px;
+    font-size: 0.41875rem;
   }
   .header-inner {
     gap: 10px;
   }
   .hero h1 {
-    font-size: 66px;
+    font-size: 4.125rem;
   }
   .hero .eyebrow {
-    font-size: 8px;
+    font-size: 0.5rem;
   }
   .hero-subtitle {
-    font-size: 16px;
+    font-size: 1rem;
   }
   .hero-actions {
     gap: 18px;
@@ -2114,7 +2087,7 @@ html[data-contrast="true"] .involvement-card {
     max-width: 230px;
   }
   .hero-secondary {
-    font-size: 14px;
+    font-size: 0.875rem;
   }
   .involvement-grid {
     gap: 14px;
@@ -2126,7 +2099,7 @@ html[data-contrast="true"] .involvement-card {
     padding: 16px 13px;
   }
   .involvement-content h3 {
-    font-size: 25px;
+    font-size: 1.5625rem;
     gap: 5px;
   }
   .card-arrow {
@@ -2134,7 +2107,7 @@ html[data-contrast="true"] .involvement-card {
     height: 27px;
   }
   .involvement-content p {
-    font-size: 13px;
+    font-size: 0.8125rem;
   }
   .story-card {
     display: flex;
@@ -2153,7 +2126,7 @@ html[data-contrast="true"] .involvement-card {
     width: 46px;
   }
   .activity-item h3 {
-    font-size: 26px;
+    font-size: 1.625rem;
   }
   .activity-item > svg {
     width: 18px;
@@ -2165,22 +2138,22 @@ html[data-contrast="true"] .involvement-card {
     padding: 40px 20px;
   }
   .community-copy h2 {
-    font-size: 40px;
+    font-size: 2.5rem;
   }
   .partner-wordmark span {
-    font-size: 18px;
+    font-size: 1.125rem;
   }
   .pace-mark span {
-    font-size: 26px;
+    font-size: 1.625rem;
   }
   .sports-mark span {
-    font-size: 17px;
+    font-size: 1.0625rem;
   }
   .page-hero-image {
     margin: 0 -20px;
   }
   .page-hero h1 {
-    font-size: 51px;
+    font-size: 3.1875rem;
   }
   .page-cta {
     padding: 25px;
@@ -2190,7 +2163,7 @@ html[data-contrast="true"] .involvement-card {
     flex-basis: calc(50% - 8px);
   }
   .welcome-inner > span:first-child {
-    font-size: 12px;
+    font-size: 0.75rem;
   }
 }
 @media (prefers-reduced-motion: reduce) {
@@ -2248,7 +2221,7 @@ html[data-contrast="true"] .involvement-card {
   max-width: 760px;
 }
 .page-cta .eyebrow {
-  font-size: 10px;
+  font-size: 0.625rem;
   margin-bottom: 10px;
 }
 .page-cta .button-navy {
@@ -2260,32 +2233,32 @@ html[data-contrast="true"] .involvement-card {
   margin: 20px 0 50px;
 }
 .pathway-section > h2 {
-  font-size: 38px;
+  font-size: 2.375rem;
 }
 .pathway-step .pathway-number {
   display: block;
   color: var(--yellow);
-  font-size: 14px;
+  font-size: 0.875rem;
   font-weight: 600;
   margin-bottom: 15px;
 }
 .pathway-step h3 {
   color: white;
-  font-size: 29px;
+  font-size: 1.8125rem;
   margin-bottom: 15px;
 }
 .pathway-step p {
   color: #dce7f0;
-  font-size: 13px;
+  font-size: 0.8125rem;
   line-height: 1.7;
   margin: 0;
 }
 .aside-note {
-  font-size: 12px !important;
+  font-size: 0.75rem !important;
   margin-top: 18px;
 }
 .aside-card > .text-link {
-  font-size: 12px;
+  font-size: 0.75rem;
   margin-top: 10px;
 }
 .resource-links {
@@ -2300,13 +2273,13 @@ html[data-contrast="true"] .involvement-card {
 }
 .related-stories > h2 {
   margin-bottom: 25px;
-  font-size: 35px;
+  font-size: 2.1875rem;
 }
 .filter-status {
   margin-bottom: 25px;
 }
 .fixtures-panel h2 {
-  font-size: 37px;
+  font-size: 2.3125rem;
 }
 .safety-card > .text-link {
   white-space: normal;
@@ -2318,13 +2291,13 @@ html[data-contrast="true"] .involvement-card {
     gap: 25px;
   }
   .pathway-section > h2 {
-    font-size: 31px;
+    font-size: 1.9375rem;
   }
   .subnav > .container {
     gap: 8px;
   }
   .pathway-step p {
-    font-size: 13px;
+    font-size: 0.8125rem;
   }
 }
 

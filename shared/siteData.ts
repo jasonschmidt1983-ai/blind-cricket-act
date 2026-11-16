@@ -7,7 +7,8 @@ export type PageData = {
   sections: { title: string; body: string; items?: string[] }[];
 };
 
-export const facebookUrl = "https://www.facebook.com/profile.php?id=100063517722072";
+export const facebookUrl =
+  "https://www.facebook.com/profile.php?id=100063517722072";
 
 export const navItems: { label: string; href: string }[] = [
   { label: "Home", href: "/" },
@@ -604,7 +605,11 @@ export const pages: Record<string, PageData> = {
       },
       {
         title: "Use the view that works for you",
-        body: "Use your browser’s zoom and text controls to enlarge the page. The layout is designed to reflow on smaller screens. The website’s text-size and high-contrast preferences are optional display settings, not a request for personal information.",
+        body: "Open Accessibility in the top bar or use the floating Accessibility button. Increase or decrease text from 100% to 200%, choose high contrast, negative contrast or a light background, and turn on grayscale, underlined links or a readable sans-serif font. Select an active colour mode again to return to the original colours, or use Reset all settings to restore the default view. Your browser’s zoom controls work too.",
+      },
+      {
+        title: "Your settings stay in your browser",
+        body: "Only your display preferences are saved locally when browser storage is available. They are not sent to the club and do not contain personal information. If storage is unavailable, the tools still work for the current page. These optional tools do not replace a screen reader or guarantee accessibility conformance. The site also respects your device’s reduced-motion setting.",
       },
       {
         title: "Our accessibility target",

@@ -1,15 +1,8 @@
-import React, { useEffect, useRef, useState, type ReactNode } from "react";
+import React, { useRef, useState, type ReactNode } from "react";
 import * as Dialog from "@radix-ui/react-dialog";
+import { AccessibilityToolbar } from "./AccessibilityToolbar";
 import { searchPublicPages } from "../lib/publicSearch";
-import {
-  ArrowRight,
-  Check,
-  MapPin,
-  Menu,
-  Search,
-  Settings2,
-  X,
-} from "lucide-react";
+import { ArrowRight, MapPin, Menu, Search, Settings2, X } from "lucide-react";
 import {
   facebookUrl,
   navItems,
@@ -61,35 +54,10 @@ export function SiteLayout({
 }) {
   const searchButtonRef = useRef<HTMLButtonElement>(null);
   const settingsButtonRef = useRef<HTMLButtonElement>(null);
+  const settingsOpenerRef = useRef<HTMLButtonElement>(null);
   const [searchOpen, setSearchOpen] = useState(false);
   const [settingsOpen, setSettingsOpen] = useState(false);
   const [query, setQuery] = useState("");
-  const [largeText, setLargeText] = useState(false);
-  const [contrast, setContrast] = useState(false);
-
-  useEffect(() => {
-    try {
-      const preference = JSON.parse(
-        localStorage.getItem("bcact-display") || "{}"
-      );
-      setLargeText(preference.largeText === true);
-      setContrast(preference.contrast === true);
-    } catch {
-      /* Display preferences are optional. */
-    }
-  }, []);
-  useEffect(() => {
-    document.documentElement.dataset.largeText = String(largeText);
-    document.documentElement.dataset.contrast = String(contrast);
-    try {
-      localStorage.setItem(
-        "bcact-display",
-        JSON.stringify({ largeText, contrast })
-      );
-    } catch {
-      /* No storage needed. */
-    }
-  }, [largeText, contrast]);
 
   const matches = searchPublicPages(query);
   const isActive = (href: string) =>
@@ -100,121 +68,135 @@ export function SiteLayout({
       <a className="skip-link" href="#main-content">
         Skip to content
       </a>
-      <div className="utility-bar">
-        <div className="container utility-inner">
-          <span>CRICKET. CONNECTION. COMMUNITY.</span>
-          <div>
-            <span className="utility-location">
-              <MapPin size={13} aria-hidden="true" /> Canberra & surrounding
-              region
-            </span>
-            <button
-              ref={settingsButtonRef}
-              onClick={() => setSettingsOpen(true)}
-            >
-              <Settings2 size={14} aria-hidden="true" /> Accessibility
-            </button>
+      <div className="site-page">
+        <div className="utility-bar">
+          <div className="container utility-inner">
+            <span>CRICKET. CONNECTION. COMMUNITY.</span>
+            <div>
+              <span className="utility-location">
+                <MapPin size={13} aria-hidden="true" /> Canberra & surrounding
+                region
+              </span>
+              <button
+                ref={settingsButtonRef}
+                type="button"
+                aria-haspopup="dialog"
+                aria-expanded={settingsOpen}
+                aria-controls="accessibility-toolbar"
+                onClick={event => {
+                  settingsOpenerRef.current = event.currentTarget;
+                  setSettingsOpen(true);
+                }}
+              >
+                <Settings2 size={14} aria-hidden="true" /> Accessibility
+              </button>
+            </div>
           </div>
         </div>
+        <header className="site-header">
+          <div className="container header-inner">
+            <Logo />
+            <nav className="desktop-nav" aria-label="Main navigation">
+              {navItems.map(item => (
+                <a
+                  key={item.href}
+                  href={item.href}
+                  aria-current={isActive(item.href) ? "page" : undefined}
+                >
+                  {item.label}
+                </a>
+              ))}
+            </nav>
+            <div className="header-tools">
+              <button
+                ref={searchButtonRef}
+                className="icon-button"
+                aria-label="Search this website"
+                onClick={() => setSearchOpen(true)}
+              >
+                <Search size={21} />
+              </button>
+              <details className="mobile-nav-disclosure">
+                <summary
+                  className="icon-button mobile-menu-trigger"
+                  aria-label="Main navigation menu"
+                >
+                  <Menu aria-hidden="true" />
+                </summary>
+                <nav
+                  id="mobile-navigation"
+                  className="mobile-nav"
+                  aria-label="Mobile navigation"
+                >
+                  {navItems.map(item => (
+                    <a
+                      key={item.href}
+                      href={item.href}
+                      aria-current={isActive(item.href) ? "page" : undefined}
+                    >
+                      {item.label}
+                      <ArrowRight size={17} aria-hidden="true" />
+                    </a>
+                  ))}
+                </nav>
+              </details>
+            </div>
+          </div>
+        </header>
+        <main id="main-content" tabIndex={-1}>
+          {children}
+        </main>
+        <footer className="site-footer">
+          <div className="container">
+            <div className="footer-top">
+              <div>
+                <p className="eyebrow">A PLACE FOR EVERY PLAYER</p>
+                <h2>
+                  Part of a team.
+                  <br />
+                  Part of something more.
+                </h2>
+              </div>
+              <ButtonLink href="/play-cricket/get-started/">
+                Find your place
+              </ButtonLink>
+            </div>
+            <div className="footer-links-row">
+              <div className="footer-links">
+                <a href="/contact/">Contact</a>
+                <a href="/governance/">Governance & Policies</a>
+                <a href={facebookUrl}>
+                  Facebook{" "}
+                  <span className="sr-only">
+                    — official Blind Cricket ACT page
+                  </span>
+                </a>
+                <a href="/safety/">Report a Safety Issue</a>
+              </div>
+              <Logo light />
+            </div>
+            <p className="country-acknowledgment">
+              We acknowledge the Ngunnawal people, the Traditional Custodians of
+              the Canberra region, and respect all people and families with a
+              connection to this Country. We pay our respects to Elders past and
+              present.
+            </p>
+            <div className="footer-bottom">
+              <span>© {new Date().getFullYear()} Blind Cricket ACT</span>
+              <div>
+                <a href="/accessibility/">Accessibility statement</a>
+                <a href="/photo-credits/">Photo credits</a>
+                <span>Everyone belongs.</span>
+              </div>
+            </div>
+          </div>
+        </footer>
       </div>
-      <header className="site-header">
-        <div className="container header-inner">
-          <Logo />
-          <nav className="desktop-nav" aria-label="Main navigation">
-            {navItems.map(item => (
-              <a
-                key={item.href}
-                href={item.href}
-                aria-current={isActive(item.href) ? "page" : undefined}
-              >
-                {item.label}
-              </a>
-            ))}
-          </nav>
-          <div className="header-tools">
-            <button
-              ref={searchButtonRef}
-              className="icon-button"
-              aria-label="Search this website"
-              onClick={() => setSearchOpen(true)}
-            >
-              <Search size={21} />
-            </button>
-            <details className="mobile-nav-disclosure">
-              <summary
-                className="icon-button mobile-menu-trigger"
-                aria-label="Main navigation menu"
-              >
-                <Menu aria-hidden="true" />
-              </summary>
-              <nav
-                id="mobile-navigation"
-                className="mobile-nav"
-                aria-label="Mobile navigation"
-              >
-                {navItems.map(item => (
-                  <a
-                    key={item.href}
-                    href={item.href}
-                    aria-current={isActive(item.href) ? "page" : undefined}
-                  >
-                    {item.label}
-                    <ArrowRight size={17} aria-hidden="true" />
-                  </a>
-                ))}
-              </nav>
-            </details>
-          </div>
-        </div>
-      </header>
-      <main id="main-content" tabIndex={-1}>
-        {children}
-      </main>
-      <footer className="site-footer">
-        <div className="container">
-          <div className="footer-top">
-            <div>
-              <p className="eyebrow">A PLACE FOR EVERY PLAYER</p>
-              <h2>
-                Part of a team.
-                <br />
-                Part of something more.
-              </h2>
-            </div>
-            <ButtonLink href="/play-cricket/get-started/">
-              Find your place
-            </ButtonLink>
-          </div>
-          <div className="footer-links-row">
-            <div className="footer-links">
-              <a href="/contact/">Contact</a>
-              <a href="/governance/">Governance & Policies</a>
-              <a href={facebookUrl}>
-                Facebook{" "}
-                <span className="sr-only">
-                  — official Blind Cricket ACT page
-                </span>
-              </a>
-              <a href="/safety/">Report a Safety Issue</a>
-            </div>
-            <Logo light />
-          </div>
-          <p className="country-acknowledgment">
-            We acknowledge the Ngunnawal people, the Traditional Custodians of
-            the Canberra region, and respect all people and families with a
-            connection to this Country. We pay our respects to Elders past and
-            present.
-          </p>
-          <div className="footer-bottom">
-            <span>© {new Date().getFullYear()} Blind Cricket ACT</span>
-            <div>
-              <a href="/accessibility/">Accessibility statement</a>
-              <a href="/photo-credits/">Photo credits</a>
-              <span>Everyone belongs.</span>
-            </div>
-          </div>
-        </div>
-      </footer>
+      <AccessibilityToolbar
+        open={settingsOpen}
+        onOpenChange={setSettingsOpen}
+        openerRef={settingsOpenerRef}
+      />
 
       <Dialog.Root open={searchOpen} onOpenChange={setSearchOpen}>
         <Dialog.Portal>
@@ -278,54 +260,6 @@ export function SiteLayout({
               )}
             </div>
             <Dialog.Close className="dialog-close" aria-label="Close search">
-              <X />
-            </Dialog.Close>
-          </Dialog.Content>
-        </Dialog.Portal>
-      </Dialog.Root>
-      <Dialog.Root open={settingsOpen} onOpenChange={setSettingsOpen}>
-        <Dialog.Portal>
-          <Dialog.Overlay className="dialog-overlay" />
-          <Dialog.Content
-            className="dialog-content settings-dialog"
-            onCloseAutoFocus={event => {
-              event.preventDefault();
-              settingsButtonRef.current?.focus();
-            }}
-          >
-            <Dialog.Title>Make yourself comfortable</Dialog.Title>
-            <Dialog.Description>
-              Choose how you read this website. These display preferences are
-              saved only on this device.
-            </Dialog.Description>
-            <button
-              className="preference-button"
-              aria-pressed={largeText}
-              onClick={() => setLargeText(!largeText)}
-            >
-              <span>
-                Larger text<small>Increase the default reading size</small>
-              </span>
-              {largeText && <Check aria-hidden="true" />}
-            </button>
-            <button
-              className="preference-button"
-              aria-pressed={contrast}
-              onClick={() => setContrast(!contrast)}
-            >
-              <span>
-                Higher contrast<small>Strengthen text and borders</small>
-              </span>
-              {contrast && <Check aria-hidden="true" />}
-            </button>
-            <a className="text-link" href="/accessibility/">
-              Read our accessibility statement{" "}
-              <ArrowRight size={17} aria-hidden="true" />
-            </a>
-            <Dialog.Close
-              className="dialog-close"
-              aria-label="Close accessibility settings"
-            >
               <X />
             </Dialog.Close>
           </Dialog.Content>

@@ -35,6 +35,8 @@ for route in routes:
     assert parser.main == 1, (name, 'main', parser.main)
     assert parser.forms == 0, (name, 'unexpected data form')
     assert 'mobile-nav-disclosure' in html and 'id="mobile-navigation"' in html and '<summary' in html, (name, 'missing no-JavaScript mobile navigation')
+    assert 'class="site-page"' in html and 'class="accessibility-fab"' in html, (name, 'missing accessibility integration')
+    assert 'aria-label="Open accessibility tools"' in html and 'aria-haspopup="dialog"' in html, (name, 'missing labelled toolbar opener')
     assert parser.canonical == ['https://blindcricket.com.au' + (name + '/' if name != '/' else '/')], (name, 'canonical')
     assert '/api/trpc' not in html and '/api/platform' not in html, (name, 'backend reference')
     for img in parser.images:
