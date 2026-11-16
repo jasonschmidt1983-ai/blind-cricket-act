@@ -2480,3 +2480,14 @@ html[data-contrast="true"] .involvement-card {
     height: 108px;
   }
 }
+
+/* Updated ACT photo cards retain the full original source files. */
+.involvement-card:nth-child(2) img {
+  object-position: center 53%;
+}
+.involvement-card:nth-child(3) img {
+  object-position: center 56%;
+}
+.involvement-card:nth-child(4) img {
+  object-position: center 32%;
+}

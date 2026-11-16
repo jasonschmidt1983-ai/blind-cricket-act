@@ -22,8 +22,8 @@ export const navItems: { label: string; href: string }[] = [
 
 const images = {
   batting: {
-    image: "/images/batting.webp",
-    alt: "Blind cricket batter in blue swinging at the ball while a wicketkeeper crouches behind.",
+    image: "/images/act-community-session.webp",
+    alt: "Blind Cricket ACT players and community participants gathered outdoors in blue-and-yellow and green shirts.",
   },
   action: {
     image: "/images/act-action.webp",
@@ -34,12 +34,12 @@ const images = {
     alt: "ACT blind cricket team standing together.",
   },
   women: {
-    image: "/images/australia-team.webp",
-    alt: "Australian women’s blind cricket team gathered together wearing yellow.",
+    image: "/images/act-members.webp",
+    alt: "Three Blind Cricket ACT members together wearing blue-and-yellow club polo shirts.",
   },
   community: {
-    image: "/images/act-community.webp",
-    alt: "ACT and Tasmania players together wearing green cricket uniforms.",
+    image: "/images/act-current-team.webp",
+    alt: "Blind Cricket ACT team gathered on the grass in blue-and-yellow cricket uniforms.",
   },
 };
 
@@ -624,7 +624,7 @@ export const pages: Record<string, PageData> = {
     [
       {
         title: "Photo sources",
-        body: "Photographs used in this website preview were sourced from public pages published by Cricket ACT and Blind Sports Australia. The source links below provide context for the blind cricket imagery. Individual photographer credits and exact article attribution require confirmation.",
+        body: "Three ACT photographs were supplied directly by Blind Cricket ACT for this website: a community gathering, the current team in blue-and-yellow uniforms, and three club members. The action photograph and additional ACT team photograph were sourced from Cricket ACT’s Blind Cricket page. Individual photographer credits require confirmation.",
       },
       {
         title: "Permission before publication",
@@ -632,7 +632,7 @@ export const pages: Record<string, PageData> = {
       },
       {
         title: "Images in context",
-        body: "The photographs include a blind cricket batter, ACT players and team members, Australian women’s blind cricket players, and ACT/Tasmania players. Images illustrate the wider game and do not imply that a pictured player leads a particular local program.",
+        body: "The photographs show ACT cricket participation, team connection and club members. The community gathering, current team and club-member photographs were supplied directly by Blind Cricket ACT. A pictured person is not identified as leading a particular program unless the club confirms that role.",
       },
     ]
   ),

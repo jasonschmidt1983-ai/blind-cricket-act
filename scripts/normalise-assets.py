@@ -9,13 +9,8 @@ for font in (root / 'client/public/fonts').glob('*.woff2'):
         converted.flavor = 'woff2'
         converted.save(font)
         print('Converted to WOFF2:', font.name)
-image = Image.open(root / 'assets/source/act-collage.jpg').convert('RGB')
-width, height = image.size
-# The two photographs in the source collage are not equally wide.
-# Keep the complete foreground players and exclude the second photograph's edge.
-action = image.crop((0, 0, round(width * 0.465), height))
-action.thumbnail((1600, 1200))
-action.save(root / 'client/public/images/act-action.webp', 'WEBP', quality=88)
+# Existing cricket photos are preserved. Owner-supplied replacements are prepared
+# explicitly by prepare-images.py, not regenerated from superseded source photos.
 for filename, target in [('Cvho1JqTgoyM.png', 'blind-sports-logo'), ('MyxmHMwlEn5t.png', 'cricket-act-logo'), ('IMZaJLG0x2QD.jpeg', 'pace-logo')]:
     path = Path('/home/ubuntu/upload/search_images') / filename
     if path.exists():

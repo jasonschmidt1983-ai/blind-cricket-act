@@ -21,22 +21,22 @@ const involvement = [
     title: "Come and Try",
     description: "A bat, an audible ball and a warm welcome.",
     href: "/play-cricket/register-interest/",
-    image: "/images/batting.webp",
-    alt: "Blind cricket player batting with a wicketkeeper ready behind the stumps",
+    image: "/images/act-community-session.webp",
+    alt: "Blind Cricket ACT players and community participants gathered outdoors in blue-and-yellow and green shirts",
   },
   {
     title: "Volunteer",
     description: "Your time can make a real difference.",
     href: "/support/volunteer/",
-    image: "/images/act-community.webp",
-    alt: "Players and support team gathered together in green cricket uniforms",
+    image: "/images/act-current-team.webp",
+    alt: "Blind Cricket ACT team together on the grass wearing blue-and-yellow uniforms",
   },
   {
     title: "Support Us",
     description: "Help open the game to more people.",
     href: "/support/",
-    image: "/images/australia-team.webp",
-    alt: "Australian women’s blind cricket team standing together in yellow uniforms",
+    image: "/images/act-members.webp",
+    alt: "Three Blind Cricket ACT members standing together in blue-and-yellow club polo shirts",
   },
 ];
 
@@ -154,8 +154,8 @@ export default function Home() {
         <div className="container explain-grid">
           <div className="explain-image">
             <img
-              src="/images/batting.webp"
-              alt="A blind cricket batter follows through on a shot as the wicketkeeper watches from behind"
+              src="/images/act-community-session.webp"
+              alt="Blind Cricket ACT players and community participants together at an outdoor cricket gathering"
               loading="lazy"
             />
             <div className="image-note">
@@ -285,8 +285,8 @@ export default function Home() {
       >
         <div className="community-photo">
           <img
-            src="/images/australia-team.webp"
-            alt="The Australian women’s blind cricket team, showing a shared pathway for women in inclusive sport"
+            src="/images/act-current-team.webp"
+            alt="Blind Cricket ACT team smiling together outdoors in blue-and-yellow cricket uniforms"
             loading="lazy"
           />
         </div>

@@ -245,16 +245,8 @@ function PublicResources({ path }: { path: string }) {
             </a>
           </li>
           <li>
-            <a href="https://blindsportsaustralia.com.au/blind-cricket/">
-              Blind Sports Australia: Blind Cricket
-            </a>
-          </li>
-          <li>
-            <a href="https://www.cricketact.com.au/">
-              Cricket ACT: national championships photography source
-            </a>{" "}
-            — the exact article and photographer attribution still need
-            confirmation.
+            Community gathering, current team and club-member photographs
+            supplied by Blind Cricket ACT.
           </li>
         </ul>
       </section>
