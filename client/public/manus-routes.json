@@ -1,0 +1,124 @@
+{
+  "routes": [
+    {
+      "path": "/",
+      "title": "Home"
+    },
+    {
+      "path": "/play-cricket",
+      "title": "Cricket starts with a conversation."
+    },
+    {
+      "path": "/play-cricket/get-started",
+      "title": "Your first step onto the field."
+    },
+    {
+      "path": "/play-cricket/register-interest",
+      "title": "Interested? Let’s talk cricket."
+    },
+    {
+      "path": "/play-cricket/training",
+      "title": "Find your next session."
+    },
+    {
+      "path": "/play-cricket/membership",
+      "title": "Know the next steps to join."
+    },
+    {
+      "path": "/play-cricket/accessibility",
+      "title": "Make the game work for you."
+    },
+    {
+      "path": "/play-cricket/faq",
+      "title": "A few things you might be wondering."
+    },
+    {
+      "path": "/programs",
+      "title": "More ways into the game."
+    },
+    {
+      "path": "/programs/albury",
+      "title": "Regional cricket. Local connection."
+    },
+    {
+      "path": "/programs/juniors",
+      "title": "A first love of the game."
+    },
+    {
+      "path": "/programs/women-inclusion",
+      "title": "Belonging belongs to everyone."
+    },
+    {
+      "path": "/programs/multicultural",
+      "title": "Different backgrounds. A shared game."
+    },
+    {
+      "path": "/programs/community",
+      "title": "Inclusion beyond the boundary."
+    },
+    {
+      "path": "/programs/pathways",
+      "title": "Your game can keep growing."
+    },
+    {
+      "path": "/fixtures",
+      "title": "Follow the cricket."
+    },
+    {
+      "path": "/news",
+      "title": "Get to know the game."
+    },
+    {
+      "path": "/support",
+      "title": "Help more people find their game."
+    },
+    {
+      "path": "/support/volunteer",
+      "title": "Bring your time. Be part of the team."
+    },
+    {
+      "path": "/support/donate",
+      "title": "Support participation, thoughtfully."
+    },
+    {
+      "path": "/support/sponsor",
+      "title": "Back a more inclusive game."
+    },
+    {
+      "path": "/about",
+      "title": "More than a game. A community."
+    },
+    {
+      "path": "/contact",
+      "title": "Let’s talk cricket."
+    },
+    {
+      "path": "/governance",
+      "title": "Trust starts with clear information."
+    },
+    {
+      "path": "/safety",
+      "title": "Find the right help for a safety concern."
+    },
+    {
+      "path": "/accessibility",
+      "title": "Information that is easier to use."
+    },
+    {
+      "path": "/photo-credits",
+      "title": "The people and pictures behind the game."
+    },
+    {
+      "path": "/news/game-shaped-by-sound",
+      "title": "A game shaped by sound"
+    },
+    {
+      "path": "/news/first-session",
+      "title": "Your first session, explained"
+    },
+    {
+      "path": "/news/inclusion-beyond-boundary",
+      "title": "Inclusion beyond the boundary"
+    }
+  ]
+}

@@ -1,42 +1,30 @@
-import { Toaster } from "@/components/ui/sonner";
-import { TooltipProvider } from "@/components/ui/tooltip";
-import NotFound from "@/pages/NotFound";
-import { Route, Switch } from "wouter";
-import ErrorBoundary from "./components/ErrorBoundary";
-import { ThemeProvider } from "./contexts/ThemeContext";
+import React from "react";
 import Home from "./pages/Home";
+import InfoPage from "./pages/InfoPage";
+import { SiteLayout } from "./components/SiteLayout";
+import { pages } from "../../shared/siteData";
 
-function Router() {
-  // make sure to consider if you need authentication for certain routes
+export default function App({ path = "/" }: { path?: string }) {
+  const current = path.replace(/\/+$/, "") || "/";
+  const known = current === "/" || current in pages;
   return (
-    <Switch>
-      <Route path={"/"} component={Home} />
-      <Route path={"/404"} component={NotFound} />
-      {/* Final fallback route */}
-      <Route component={NotFound} />
-    </Switch>
+    <SiteLayout path={current}>
+      {current === "/" ? (
+        <Home />
+      ) : known ? (
+        <InfoPage path={current} />
+      ) : (
+        <section className="section not-found">
+          <div className="container">
+            <p className="eyebrow">LET’S GET YOU BACK ON THE PITCH</p>
+            <h1>That page isn’t here.</h1>
+            <p>It may have moved, or the address may be incorrect.</p>
+            <a className="button" href="/">
+              Back to the homepage
+            </a>
+          </div>
+        </section>
+      )}
+    </SiteLayout>
   );
 }
-
-// NOTE: About Theme
-// - First choose a default theme according to your design style (dark or light bg), than change color palette in index.css
-//   to keep consistent foreground/background color across components
-// - If you want to make theme switchable, pass `switchable` ThemeProvider and use `useTheme` hook
-
-function App() {
-  return (
-    <ErrorBoundary>
-      <ThemeProvider
-        defaultTheme="light"
-        // switchable
-      >
-        <TooltipProvider>
-          <Toaster />
-          <Router />
-        </TooltipProvider>
-      </ThemeProvider>
-    </ErrorBoundary>
-  );
-}
-
-export default App;

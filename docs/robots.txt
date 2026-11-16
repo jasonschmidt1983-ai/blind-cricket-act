@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://blindcricket.com.au/sitemap.xml
