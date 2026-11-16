@@ -7,7 +7,7 @@ export type PageData = {
   sections: { title: string; body: string; items?: string[] }[];
 };
 
-export const facebookUrl = "https://www.facebook.com/blindcricketactofficial/";
+export const facebookUrl = "https://www.facebook.com/profile.php?id=100063517722072";
 
 export const navItems: { label: string; href: string }[] = [
   { label: "Home", href: "/" },
