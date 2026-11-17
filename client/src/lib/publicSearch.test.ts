@@ -8,6 +8,10 @@ describe("public information search", () => {
     ["FAQ", "/play-cricket/faq"],
     ["Albury", "/programs/albury"],
     ["volunteering", "/support/volunteer"],
+    ["Board", "/about/board"],
+    ["NCIC 2027", "/state-team"],
+    ["Brent Dopson", "/state-team"],
+    ["Secretary", "/about/board"],
   ])("finds the %s public page", (query, path) => {
     expect(searchPublicPages(query).map(([href]) => href)).toContain(path);
   });

@@ -8,6 +8,7 @@ import {
   Users,
 } from "lucide-react";
 import { ButtonLink, StoryCards } from "../components/SiteLayout";
+import { stateTeam } from "../../../shared/siteData";
 
 const involvement = [
   {
@@ -256,6 +257,24 @@ export default function Home() {
                 </div>
                 <ArrowRight size={21} aria-hidden="true" />
               </a>
+              <a href="/state-team/" className="activity-item">
+                <span className="activity-icon">
+                  <Users size={27} aria-hidden="true" />
+                </span>
+                <div>
+                  <span className="badge">
+                    STATE TEAM · NCIC {stateTeam.year}
+                  </span>
+                  <h3>Our squad for Ballarat is announced.</h3>
+                  <p>
+                    <MapPin size={14} aria-hidden="true" /> {stateTeam.location}
+                  </p>
+                  <span className="activity-status">
+                    {stateTeam.dates} · Meet the 13 selected players
+                  </span>
+                </div>
+                <ArrowRight size={21} aria-hidden="true" />
+              </a>
             </div>
           </div>
         </div>
@@ -298,12 +317,15 @@ export default function Home() {
             <em>One shared game.</em>
           </h2>
           <p>
-            Cricket connects us. Our programs create opportunities for juniors,
-            women, multicultural communities and people across the region.
+            We empower people who are blind or have low vision through cricket,
+            inclusion and community. Our supportive environment helps players
+            develop skills, build confidence and form lasting connections.
           </p>
           <p>
-            For schools, community groups and workplaces, blind cricket offers a
-            hands-on way to explore communication, accessibility and inclusion.
+            Across the ACT and our second base in Albury, we remove barriers and
+            grow participation. Schools, community groups and workplaces can
+            also explore communication, accessibility and inclusion through
+            cricket.
           </p>
           <ButtonLink href="/programs/">Explore our programs</ButtonLink>
         </div>
@@ -332,10 +354,7 @@ export default function Home() {
                 loading="lazy"
               />
             </a>
-            <a
-              href="https://www.cricketact.com.au/blind-cricket"
-              className="partner-logo"
-            >
+            <a href={stateTeam.cricketActUrl} className="partner-logo">
               <img
                 src="/images/cricket-act-logo.webp"
                 alt="Cricket ACT — blind cricket in our region"

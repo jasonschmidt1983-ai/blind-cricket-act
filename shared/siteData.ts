@@ -10,6 +10,61 @@ export type PageData = {
 export const facebookUrl =
   "https://www.facebook.com/profile.php?id=100063517722072";
 
+export const clubContact = {
+  email: "BlindCricketACT@gmail.com",
+  emailUrl: "mailto:BlindCricketACT@gmail.com",
+  phone: "0412 140 263",
+  phoneUrl: "tel:+61412140263",
+};
+
+export const boardMembers = [
+  {
+    name: "Jason Schmidt",
+    role: "President and Assistant Coach",
+    image: "/images/board-jason-schmidt.webp",
+  },
+  {
+    name: "Robert Altamore",
+    role: "Secretary",
+    image: "/images/board-robert-altamore.webp",
+  },
+  {
+    name: "Jespah Soegeng",
+    role: "Treasurer",
+    image: "/images/board-jespah-soegeng.webp",
+  },
+  {
+    name: "Chris Hartshorn",
+    role: "Vice President and Head Coach",
+    image: "/images/board-chris-hartshorn.webp",
+  },
+];
+
+export const stateTeam = {
+  event: "National Cricket Inclusion Championships",
+  year: 2027,
+  dates: "10–15 January 2027",
+  location: "Ballarat, Victoria",
+  announcementUrl: "https://www.facebook.com/share/r/1CUpWwZQ8Q/",
+  cricketActUrl: "https://www.cricketact.com.au/players/blind-cricket-act",
+  eventUrl: "https://www.cricketvictoria.com.au/ncic/",
+  players: [
+    "Brent Dopson",
+    "Daniel Searle",
+    "Hayden Vella",
+    "Cameron Roles",
+    "Mirza Baig",
+    "Mat Kent",
+    "Courtney Webek",
+    "Sharrie Harris",
+    "Clifton Plummer",
+    "Toby Hartshorn",
+    "Michael Hamilton",
+    "Ivy Walker",
+    "Bree Fuller",
+  ],
+};
+
 export const navItems: { label: string; href: string }[] = [
   { label: "Home", href: "/" },
   { label: "Play Cricket", href: "/play-cricket" },
@@ -275,7 +330,7 @@ export const pages: Record<string, PageData> = {
     [
       {
         title: "Building consistency in the region",
-        body: "The Albury program focuses on local players and coaches, with consistent summer training as a program aim. It provides a regional starting point for people interested in blind cricket.",
+        body: "Albury is Blind Cricket ACT’s second base of operations, creating opportunities for local people who are blind or have low vision. With local players, coaches and a focus on consistent summer training, this regional presence removes barriers, grows participation and connects our cricket community across both regions.",
       },
       {
         title: "Check the current arrangements",
@@ -329,7 +384,7 @@ export const pages: Record<string, PageData> = {
       },
       {
         title: "Explore the next step",
-        body: "Program dates and team selection information are not published here. Ask about current participation options and how development or representative opportunities work. Selection is not guaranteed.",
+        body: "Our NCIC 2027 State Team squad is now published, while local program dates still need to be confirmed. Ask about current participation options and how development or future representative opportunities work. Selection is not guaranteed.",
       },
     ]
   ),
@@ -395,31 +450,51 @@ export const pages: Record<string, PageData> = {
       },
       {
         title: "Representative opportunities",
-        body: "Ask the club about the current route into competitive and representative cricket. Eligibility, classification requirements, selection processes and available competitions should be confirmed before making plans.",
+        body: "Our State Team gives blind and low-vision cricketers the opportunity to represent the ACT at the National Cricket Inclusion Championships (NCIC). A collaborative relationship with Cricket ACT strengthens access to facilities, coordinated training, cricket networks and development support. Eligibility and selection requirements should be confirmed with the club; a representative place is not guaranteed.",
+      },
+    ]
+  ),
+  "/state-team": page(
+    "Representing the ACT. Together.",
+    "The State Team",
+    "Our representative players take blind cricket from local participation to the national stage. Meet the squad selected for NCIC 2027 in Ballarat.",
+    "community",
+    [
+      {
+        title: "A national pathway built on local connection",
+        body: "Blind Cricket ACT is strengthening the pathway for people who are blind or have low vision to train, compete and proudly represent the ACT. Our collaborative relationship with Cricket ACT connects players with facilities, coordinated training opportunities, cricket networks and development support.",
+      },
+      {
+        title: "More than a tournament",
+        body: "The National Cricket Inclusion Championships bring together representative cricketers with disability from across Australia. Our selected players head to Ballarat, Victoria, for the 2027 championships from 10–15 January, with experience, talent and determination across the blind and low-vision classifications.",
+      },
+      {
+        title: "Back the people behind the performance",
+        body: "Sponsorship and community support help reduce the financial burden of travel, accommodation, registration, equipment and team preparation. Any contribution helps our players develop their skills and participate on more equal terms. The team announcement acknowledges Lord’s Taverners ACT as the team’s sponsor.",
       },
     ]
   ),
   "/fixtures": page(
     "Follow the cricket.",
     "Fixtures & results",
-    "Training, matches and results will be listed here as details are confirmed. For now, check with the club before planning a visit.",
+    "Follow our State Team’s preparation for NCIC 2027 in Ballarat, 10–15 January. Individual match fixtures and results will be added when confirmed.",
     "action",
     [
       {
         title: "Before you head to the ground",
-        body: "Confirm the date, start time, venue and any changes through the official Blind Cricket ACT Facebook page. Current fixtures and match results are not yet published here.",
+        body: "The 2027 National Cricket Inclusion Championships take place in Ballarat from 10–15 January. Our selected squad is announced on the State Team page. Match-by-match times, grounds and results are not yet published here; check the club and official event information before making travel plans.",
       },
     ]
   ),
   "/news": page(
     "Get to know the game.",
     "News & stories",
-    "Practical guides to blind cricket, taking your first step and building a more inclusive community. A useful place to begin, on and off the field.",
+    "State Team announcements, practical guides and stories from our inclusive cricket community—on and off the field.",
     "batting",
     [
       {
-        title: "Stories to help you take part",
-        body: "These undated guides introduce the game and the community around it. Club announcements and match reports will be added when confirmed information is available.",
+        title: "Follow the community and the competition",
+        body: "Read the confirmed NCIC 2027 State Team announcement alongside our guides to the game, getting started and building inclusion. Match reports will be added when confirmed information is available.",
       },
     ]
   ),
@@ -473,7 +548,7 @@ export const pages: Record<string, PageData> = {
     [
       {
         title: "Check the official arrangements",
-        body: "No verified donation link, bank details or fundraising campaign has been published here. Use the official Facebook page to ask whether donations are currently accepted and how to confirm an authorised payment channel.",
+        body: "Our NCIC sponsorship appeal seeks $2,000 to help get the full team to the tournament and reduce the financial burden on players. We do not expect one supporter to cover the whole amount: any contribution helps. Email BlindCricketACT@gmail.com or call 0412 140 263 to confirm how to contribute through an authorised channel. This website does not take payments or publish bank details.",
       },
       {
         title: "Understand your contribution",
@@ -488,56 +563,84 @@ export const pages: Record<string, PageData> = {
   "/support/sponsor": page(
     "Back a more inclusive game.",
     "Sponsorship enquiries",
-    "Start a conversation about helping Blind Cricket ACT build opportunities to play, learn and connect.",
+    "The ball has a sound. Your support has an impact. Help our players build confidence, connect with community and proudly represent the ACT.",
     "action",
     [
       {
-        title: "Explore a shared purpose",
-        body: "Organisations can ask about supporting participation, community activities or program development. Begin with what interests your organisation and ask what the club currently needs.",
+        title: "Why partner with us?",
+        body: "Your support connects your organisation with inclusive values and practical community impact. Blind Cricket ACT provides a supportive environment where players develop skills, build confidence and form lasting connections. Sponsorship strengthens opportunities across the ACT and our second base in Albury, from junior participation and training to community capacity building and national competition.",
       },
       {
-        title: "Agree the details together",
-        body: "Sponsorship packages, pricing, recognition and benefits have not yet been published. Any arrangement should be confirmed directly with the club; this website does not promise endorsement or a commercial partnership.",
+        title: "Help us reach the NCIC",
+        body: "Our appeal seeks $2,000 to help get the full team to the tournament. We do not expect one supporter to cover the full amount. Contributions of any size help reduce the financial burden on players; the examples below describe the areas support can assist, not fixed commercial sponsorship packages or a live funding-progress report.",
+        items: [
+          "$100 helps cover essential team expenses.",
+          "$250 contributes towards tournament registration and equipment.",
+          "$500 helps with travel and accommodation.",
+          "$1,000 contributes half of the appeal target.",
+          "$2,000 meets the appeal target.",
+        ],
       },
       {
-        title: "A clear starting point",
-        body: "Use the official Facebook page for an initial enquiry and ask for the appropriate sponsorship contact. No sponsor application or payment is collected here.",
+        title: "Build a partnership with purpose",
+        body: "Contact Blind Cricket ACT at BlindCricketACT@gmail.com or on 0412 140 263 to discuss your support, community involvement and appropriate recognition. Sponsorship arrangements and benefits are agreed directly with the club. No application or payment information is collected on this website, and tax deductibility must be confirmed rather than assumed.",
       },
     ]
   ),
   "/about": page(
     "More than a game. A community.",
     "About Blind Cricket ACT",
-    "Blind cricket is more than meets the eye. It is sound, teamwork and trust—and a way to connect in Canberra and the surrounding region.",
+    "We empower people who are blind or have low vision through cricket, inclusion and community—creating opportunities to thrive on and off the field.",
     "team",
     [
       {
-        title: "Our purpose",
-        body: "Blind Cricket ACT is about creating opportunities for people who are blind or have low vision to participate in cricket and belong to a sporting community. The game brings together learning, activity and the shared experience of being part of a team.",
+        title: "About us",
+        body: "At Blind Cricket ACT, we provide a supportive environment where every person can develop their skills, build confidence, form lasting connections and thrive both on and off the field. By breaking down barriers and challenging stereotypes, we are building a future where each person’s strengths, resilience and potential are recognised.",
       },
       {
-        title: "People make the game",
-        body: "Players, families, carers, volunteers, schools and community organisations all have a place in the conversation. You can start as a beginner, enquire on behalf of a group or explore a way to support participation.",
+        title: "Our vision",
+        body: "More than a sporting association, we are a movement for change. Our vision is a community where everyone, regardless of sight, can live, play and thrive together—where talent is nurtured, preconceptions are challenged and opportunities are open to all.",
+      },
+      {
+        title: "Our mission",
+        body: "Cricket is our starting point. Our commitment extends beyond the field, building understanding, compassion and equal opportunities in everyday life.",
+        items: [
+          "Empowerment and inclusivity: support personal growth, confidence and resilience through cricket.",
+          "Breaking barriers: challenge stereotypes and remove obstacles to participation.",
+          "Advocacy for equality: promote accessibility and opportunities for people who are blind or have low vision.",
+        ],
       },
       {
         title: "Connection across the region",
-        body: "The website brings together information about playing, regional development in Albury, junior and women’s participation, multicultural inclusion and community programs. Current opportunities and operational details should be confirmed with the club.",
+        body: "We support communities across the ACT region, with a second base of operations in Albury that creates opportunities for local people who are blind or have low vision. This regional presence helps remove barriers, grow participation and build a connected cricket community across both regions.",
       },
       {
-        title: "A game worth discovering",
-        body: "An audible ball changes how cricket is played, not the joy of a well-timed shot or a team effort. Clear communication and trust are at the heart of the experience.",
+        title: "What we do",
+        body: "Our work brings together junior participation, training, community capacity building and national competition. Whether you are a player, family member, volunteer, school, community organisation or sponsor, there is a way to help make inclusion part of everyday cricket.",
+      },
+    ]
+  ),
+  "/about/board": page(
+    "Meet the Board.",
+    "The Board",
+    "The volunteer leaders helping Blind Cricket ACT grow participation, support our players and build an inclusive cricket community.",
+    "team",
+    [
+      {
+        title: "Leadership with a shared purpose",
+        body: "Our Board brings governance, administration and cricket leadership together. Jason Schmidt, Robert Altamore, Jespah Soegeng and Chris Hartshorn work towards the same goal: empowering people who are blind or have low vision through cricket, inclusion and community.",
       },
     ]
   ),
   "/contact": page(
     "Let’s talk cricket.",
     "Contact",
-    "For general enquiries, use the official Blind Cricket ACT Facebook page. Ask about playing, volunteering, programs or supporting the club.",
+    "Email BlindCricketACT@gmail.com, call 0412 140 263 or use our official Facebook page. Ask about playing, volunteering, programs, the State Team or sponsorship.",
     "community",
     [
       {
-        title: "One official starting point",
-        body: "The Blind Cricket ACT official Facebook page is the published contact channel for general enquiries. Ask for the current session details or the relevant person to speak with. No response time is promised.",
+        title: "Contact Blind Cricket ACT",
+        body: "For general enquiries, email BlindCricketACT@gmail.com or call 0412 140 263. You can also use our official Facebook page for current updates and to ask about the relevant person to speak with. No response time is promised.",
       },
       {
         title: "Keep your message general",
@@ -545,7 +648,7 @@ export const pages: Record<string, PageData> = {
       },
       {
         title: "If Facebook is not accessible to you",
-        body: "An alternative email address or telephone number has not yet been published here. A trusted person may be able to help make a general enquiry on your behalf without sharing sensitive information.",
+        body: "You do not need a Facebook account to contact us. Use the email or telephone links below to ask a general question, including whether information can be provided in a format that works for you.",
       },
     ]
   ),
@@ -629,15 +732,31 @@ export const pages: Record<string, PageData> = {
     [
       {
         title: "Photo sources",
-        body: "Three ACT photographs were supplied directly by Blind Cricket ACT for this website: a community gathering, the current team in blue-and-yellow uniforms, and three club members. The action photograph and additional ACT team photograph were sourced from Cricket ACT’s Blind Cricket page. Individual photographer credits require confirmation.",
+        body: "Three ACT photographs were supplied directly by Blind Cricket ACT for this website: a community gathering, the current team in blue-and-yellow uniforms, and three club members. The four Board portraits are retained from the owner-supplied sponsorship proposal. The NCIC 2027 announcement graphic was retrieved from Blind Cricket ACT’s public Facebook reel. The action photograph and additional ACT team photograph were sourced from Cricket ACT’s Blind Cricket page. Individual photographer credits require confirmation.",
       },
       {
         title: "Permission before publication",
-        body: "Photo ownership, reuse permission and any required participant consent must be confirmed before final public launch. These photographs are credited as preview sources; their inclusion is not a claim that the publishers or pictured players endorse this website.",
+        body: "New photographs should be supplied or authorised by the club, with any required participant consent and photographer credit confirmed before use. Attribution does not replace permission. The images are presented in their cricket and club context, not as unrelated endorsements.",
       },
       {
         title: "Images in context",
         body: "The photographs show ACT cricket participation, team connection and club members. The community gathering, current team and club-member photographs were supplied directly by Blind Cricket ACT. A pictured person is not identified as leading a particular program unless the club confirms that role.",
+      },
+    ]
+  ),
+  "/news/ncic-2027-team-announcement": page(
+    "Meet ACT’s squad for Ballarat 2027.",
+    "Announcements · State Team",
+    "Congratulations to the 13 players selected to represent Blind Cricket ACT at the 2027 National Cricket Inclusion Championships, 10–15 January in Ballarat, Victoria.",
+    "community",
+    [
+      {
+        title: "Selected to represent the ACT",
+        body: "Our official team announcement brings together experience, talent and determination as preparations begin for Ballarat. We congratulate the selected athletes and thank everyone who participated in the selection process and continues to support the growth of blind cricket in the ACT.",
+      },
+      {
+        title: "Pride, determination and sportsmanship",
+        body: "The National Cricket Inclusion Championships give players the opportunity to represent their state or territory on the national stage. We wish our squad the very best as they prepare to represent the ACT with pride, determination and sportsmanship.",
       },
     ]
   ),
@@ -732,6 +851,15 @@ export const stories: {
   alt: string;
   readTime: string;
 }[] = [
+  {
+    title: "ACT squad announced for NCIC 2027",
+    category: "Announcements",
+    description:
+      "Meet the 13 players selected for Ballarat, Victoria, 10–15 January 2027, and view the official announcement.",
+    href: "/news/ncic-2027-team-announcement",
+    ...images.community,
+    readTime: "State Team announcement",
+  },
   {
     title: "A game shaped by sound",
     category: "Playing",

@@ -1,4 +1,4 @@
-import { pages } from "../../../shared/siteData";
+import { boardMembers, pages, stateTeam } from "../../../shared/siteData";
 
 const keywords: Record<string, string> = {
   "/support/volunteer": "volunteer volunteering help coaching",
@@ -7,6 +7,11 @@ const keywords: Record<string, string> = {
   "/programs/juniors": "junior juniors kids children youth",
   "/play-cricket/faq": "faq frequently asked questions answers",
   "/programs/albury": "albury regional summer",
+  "/about/board": boardMembers
+    .map(member => `${member.name} ${member.role}`)
+    .join(" "),
+  "/state-team": `state team representative squad NCIC ${stateTeam.year} Ballarat ${stateTeam.players.join(" ")}`,
+  "/news/ncic-2027-team-announcement": `announcement NCIC ${stateTeam.year} ${stateTeam.players.join(" ")}`,
 };
 
 /** Searches only bundled public information; nothing is submitted or recorded. */

@@ -2,14 +2,22 @@ import React, { useState, type KeyboardEvent } from "react";
 import { ArrowRight, CalendarDays, MapPin, ShieldCheck } from "lucide-react";
 import {
   facebookUrl,
+  clubContact,
   pages,
+  stateTeam,
   stories,
   type PageData,
 } from "../../../shared/siteData";
+import { BoardProfiles, StateTeamAnnouncement } from "../components/ClubPeople";
 
 const integrityUrl =
   "https://blindsportsaustralia.com.au/national-integrity-framework/";
-const storyCategories = ["All stories", "Playing", "Inclusion"] as const;
+const storyCategories = [
+  "All stories",
+  "Announcements",
+  "Playing",
+  "Inclusion",
+] as const;
 type StoryCategory = (typeof storyCategories)[number];
 type FixtureView = "upcoming" | "results";
 
@@ -77,7 +85,7 @@ function StoryCards({ items }: { items: typeof stories }) {
             <div className="story-foot">
               <span>{story.readTime}</span>
               <span className="text-link">
-                Read the guide <ArrowRight size={18} aria-hidden="true" />
+                Read the story <ArrowRight size={18} aria-hidden="true" />
               </span>
             </div>
           </div>
@@ -111,14 +119,18 @@ function EnquiryAside({ path }: { path: string }) {
         <MapPin size={28} aria-hidden="true" />
       ) : null}
       <p className="eyebrow">Start a conversation</p>
-      <h2>
-        {path === "/contact" ? "Official Facebook page" : "Have a question?"}
-      </h2>
+      <h2>{path === "/contact" ? "Contact the club" : "Have a question?"}</h2>
       <p>
         Ask Blind Cricket ACT about current opportunities and the right next
         step for you.
       </p>
-      <a className="button button-primary" href={facebookUrl}>
+      <a className="button button-primary" href={clubContact.emailUrl}>
+        Email Blind Cricket ACT <ArrowRight size={18} aria-hidden="true" />
+      </a>
+      <a className="text-link club-phone-link" href={clubContact.phoneUrl}>
+        Call {clubContact.phone}
+      </a>
+      <a className="text-link" href={facebookUrl}>
         Enquire on Facebook <ArrowRight size={18} aria-hidden="true" />
       </a>
       <p className="aside-note">
@@ -209,6 +221,36 @@ function Pathway() {
 }
 
 function PublicResources({ path }: { path: string }) {
+  if (
+    [
+      "/about",
+      "/about/board",
+      "/programs/pathways",
+      "/fixtures",
+      "/support",
+      "/support/sponsor",
+      "/support/donate",
+    ].includes(path)
+  ) {
+    return (
+      <section className="resource-links prose">
+        <h2>Follow our State Team</h2>
+        <p>
+          Our selected squad is preparing for NCIC {stateTeam.year} in{" "}
+          {stateTeam.location}, {stateTeam.dates}.
+        </p>
+        <a className="text-link" href="/state-team/">
+          Meet the State Team <ArrowRight size={18} aria-hidden="true" />
+        </a>
+        <p>
+          <a href={stateTeam.announcementUrl}>
+            View the official Facebook team announcement
+          </a>
+          .
+        </p>
+      </section>
+    );
+  }
   if (path === "/governance" || path === "/safety") {
     return (
       <section className="resource-links prose">
@@ -247,6 +289,10 @@ function PublicResources({ path }: { path: string }) {
           <li>
             Community gathering, current team and club-member photographs
             supplied by Blind Cricket ACT.
+          </li>
+          <li>
+            Board portraits retained from the supplied Blind Cricket ACT
+            sponsorship proposal.
           </li>
         </ul>
       </section>
@@ -309,6 +355,7 @@ export default function InfoPage({ path }: { path: string }) {
       href.startsWith(`${normalizedPath}/`) &&
       !href.slice(normalizedPath.length + 1).includes("/")
   );
+  if (normalizedPath === "/about") childPaths.push("/state-team");
   const filteredStories =
     category === "All stories"
       ? stories
@@ -348,7 +395,9 @@ export default function InfoPage({ path }: { path: string }) {
                           ? "Programs & Pathways"
                           : parentPath === "/support"
                             ? "Support Us"
-                            : "Play Cricket"}
+                            : parentPath === "/about"
+                              ? "About"
+                              : "Play Cricket"}
                     </a>
                   </li>
                 )}
@@ -384,7 +433,7 @@ export default function InfoPage({ path }: { path: string }) {
         <div className="container">
           {normalizedPath === "/news" && (
             <section className="news-stories" aria-labelledby="stories-heading">
-              <h2 id="stories-heading">Explore the guides</h2>
+              <h2 id="stories-heading">Latest announcements & stories</h2>
               <div
                 className="filter-controls filters"
                 role="group"
@@ -410,7 +459,7 @@ export default function InfoPage({ path }: { path: string }) {
                 aria-atomic="true"
               >
                 Showing {filteredStories.length}{" "}
-                {filteredStories.length === 1 ? "guide" : "guides"}
+                {filteredStories.length === 1 ? "story" : "stories"}
                 {category === "All stories"
                   ? " across all categories"
                   : ` in ${category}`}
@@ -463,16 +512,21 @@ export default function InfoPage({ path }: { path: string }) {
                   <CalendarDays size={34} aria-hidden="true" />
                   <h3>
                     {view === "upcoming"
-                      ? "Dates are being confirmed"
+                      ? "NCIC 2027 · Ballarat"
                       : "Results will be shared here"}
                   </h3>
                   <p>
                     {view === "upcoming"
-                      ? "Ask the club about the next training session or match. Confirm the time, venue and any access arrangements before travelling."
+                      ? `The National Cricket Inclusion Championships take place ${stateTeam.dates} in ${stateTeam.location}. Our squad has been announced. Individual match times and grounds are still to be confirmed.`
                       : "Confirmed match results will be added when available. For current team updates, check the official Blind Cricket ACT Facebook page."}
                   </p>
-                  <a className="text-link" href="/contact/">
-                    Ask for the latest cricket information{" "}
+                  <a
+                    className="text-link"
+                    href={view === "upcoming" ? "/state-team/" : "/contact/"}
+                  >
+                    {view === "upcoming"
+                      ? "Meet the selected State Team"
+                      : "Ask for the latest cricket information"}{" "}
                     <ArrowRight size={18} aria-hidden="true" />
                   </a>
                 </div>
@@ -488,6 +542,11 @@ export default function InfoPage({ path }: { path: string }) {
           )}
 
           {normalizedPath === "/programs/pathways" && <Pathway />}
+
+          {(normalizedPath === "/state-team" ||
+            normalizedPath === "/news/ncic-2027-team-announcement") && (
+            <StateTeamAnnouncement />
+          )}
 
           <div className="content-split">
             <div>
@@ -510,6 +569,11 @@ export default function InfoPage({ path }: { path: string }) {
             </div>
             <EnquiryAside path={normalizedPath} />
           </div>
+
+          {(normalizedPath === "/about" ||
+            normalizedPath === "/about/board") && (
+            <BoardProfiles showLink={normalizedPath === "/about"} />
+          )}
 
           {isStory && (
             <section

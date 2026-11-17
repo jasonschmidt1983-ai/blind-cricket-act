@@ -61,6 +61,10 @@
       "title": "Your game can keep growing."
     },
     {
+      "path": "/state-team",
+      "title": "Representing the ACT. Together."
+    },
+    {
       "path": "/fixtures",
       "title": "Follow the cricket."
     },
@@ -89,6 +93,10 @@
       "title": "More than a game. A community."
     },
     {
+      "path": "/about/board",
+      "title": "Meet the Board."
+    },
+    {
       "path": "/contact",
       "title": "Let’s talk cricket."
     },
@@ -107,6 +115,10 @@
     {
       "path": "/photo-credits",
       "title": "The people and pictures behind the game."
+    },
+    {
+      "path": "/news/ncic-2027-team-announcement",
+      "title": "Meet ACT’s squad for Ballarat 2027."
     },
     {
       "path": "/news/game-shaped-by-sound",
